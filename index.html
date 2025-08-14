@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCCUHours</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="./all.css">
+    <script src="./ui.js"></script>
+    <script src="./ccu.js"></script>
+</head>
+
+<body onload="initUI();">
+    <h1 class="text-center">PyCCUHours 1.0</h1>
+    <h4 class="text-center">Author: <a href="https://github.com/JzzzHung">JZ</a></h4>
+    <h4 class="text-center">Inspired by: <a href="https://github.com/TaroballzChen/GoCCUHours">Taroballz</a></h4>
+    <table class="table">
+        <thead class="th-fs">
+            <tr>
+                <th scope="col">類別</th>
+                <th scope="col">項目</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">工作項目</td>
+                <td>
+                    <div class="btn-group" id="workin" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check workin" id="btncheckWork1" autocomplete="off"
+                            value="實驗數據整理" checked>
+                        <label class="btn btn-outline-primary m-r8" for="btncheckWork1">實驗數據整理</label>
+
+                        <input type="checkbox" class="btn-check workin" id="btncheckWork2" autocomplete="off"
+                            value="閱讀文獻" checked>
+                        <label class="btn btn-outline-primary m-r8" for="btncheckWork2">閱讀文獻</label>
+
+                        <input type="checkbox" class="btn-check workin" id="btncheckWork3" autocomplete="off"
+                            value="儀器操作" checked>
+                        <label class="btn btn-outline-primary m-r8" for="btncheckWork3">儀器操作</label>
+
+                        <input type="checkbox" class="btn-check workin" id="btncheckWork4" autocomplete="off"
+                            value="協助實驗進行">
+                        <label class="btn btn-outline-primary m-r8" for="btncheckWork4">協助實驗進行</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">計畫代碼</td>
+                <td>
+                    <div class="btn-group" id="projID" role="group" aria-label="Basic radio toggle button group">
+
+                        <!-- 有"checked"屬性表示預設會打勾 -->
+                        <!-- "112-02147" 可改成任意計畫代碼 -->
+                        <!-- "鳳梨產學" 可成方便辨識的別名 -->
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj1"
+                            value="112-02147" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj1">鳳梨產學</label>
+
+                        <!-- ↓↓↓↓↓ 這樣是一個按鈕 ↓↓↓↓↓ -->
+                        <!-- 只有中文字那邊可以改動 -->
+                        <!-- 可以改掉或新增其他按鈕的相同位置 -->
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj2"
+                            value="這裡改填計畫代碼" autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj2">這裡改填計畫名字或方便辨識的別名</label>
+                        <!-- ↑↑↑↑↑ 這樣是一個按鈕 ↑↑↑↑↑ -->
+
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj3"
+                            value="112-01680" autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj3">112-01680</label>
+
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj4"
+                            value="110-01941" autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj4">110-01941</label>
+
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj5"
+                            value="111QB03" autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj5">111QB03</label>
+
+                        <input type="radio" class="btn-check projID" name="btnradioproj" id="btnradioproj6"
+                            value="111-B96" autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradioproj6">110-B96</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">每日工作時數</td>
+                <td>
+                    <div class="btn-group" id="hrs" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check hrs" name="btnradiohrs" id="btnradiohrs1" value="8"
+                            autocomplete="off" checked>
+                        <label class="btn btn-outline-primary m-r8" for="btnradiohrs1">8</label>
+
+                        <input type="radio" class="btn-check hrs" name="btnradiohrs" id="btnradiohrs2" value="4"
+                            autocomplete="off">
+                        <label class="btn btn-outline-primary m-r8" for="btnradiohrs2">4</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">工作日</td>
+                <td>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="addonyy">年份</span>
+                        <input type="number" class="form-control" autocomplete="off" placeholder="民國年" id="yy"
+                            onchange="createDatesBtn()">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="addonmm">月份</span>
+                        <input type="number" class="form-control" autocomplete="off" placeholder="" id="mm" min="1"
+                            max="12" onchange="createDatesBtn()">
+                    </div>
+                    <div id="dates">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" id="ok" class="btn btn-success btn-lg h-center" onclick="job()">開始填寫工作日誌</button>
+</body>
+
+</html>

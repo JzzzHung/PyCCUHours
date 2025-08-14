@@ -1,0 +1,57 @@
+body {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.h250 {
+    height: 250px;
+}
+
+.w100pa {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.hide-list-style {
+    list-style: none;
+}
+
+.chem {
+    color: #FFC107;
+    margin: 5px 0px;
+}
+
+.th-fs {
+    font-size: 1.25rem;
+    padding-left: 0;
+}
+
+.h-center {
+    display:block;
+    margin:auto;
+}
+
+.h-center-100 {
+    display:block;
+    margin:auto;
+    width: 100%;
+}
+
+.m-r8 {
+    margin-right: 8px;
+}
+
+
+.m-rb8 {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
